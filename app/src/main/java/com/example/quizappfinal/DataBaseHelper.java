@@ -17,6 +17,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE QuizAppQuestion (Question STRING PRIMARY KEY AUTOINCREMENT, oA TEXT, oB TEXT , oC TEXT, oD TEXT , ans TEXT)");
+        _db.execSQL("INSERT INTO TABLE QuizAppQuestion VALUES()");
+        //5 lần
+
     }
 
     @Override
@@ -57,17 +60,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             String ans = cursor.getString(5);
 
             ModelClass modelClass = new ModelClass( Question, oA, oB, oC, oD, ans);
-           // list.add(modelClass);
-            list.add(new ModelClass
-                    ("question 1 : Đâu là tên của một câu truyện cười dân gian ? ","Thầy bói xem ngan","Thầy bói xem voi","Thầy bói xem vịt","Thầy bói xem heo","Thầy bói xem voi"));
-            list.add(new ModelClass
-                    ("question 2 : Thưa rằng tôi đi hái ... Hai anh mở túi đưa trầu cho ăn ? ","Dâu","Cau","Ổi","Táo","Dâu"));
-            list.add(new ModelClass
-                    ("question 3 : Đâu là tên của một loại phương tiện vận chuyển người thời trước? ","Hành","Tỏi","Kiệu","Dưa","Kiệu"));
-            list.add(new ModelClass
-                    ("question 4 : Loài động vật nào sau đây có gai trên cơ thể? ","Chó","Mèo","Hùng","Nhím","Nhím"));
-            list.add(new ModelClass
-                    ("question 5 : Haiku là thể thơ truyền thống của nước nào? ","Anh","Nhật Bản ","Pháp","Ý","Nhật Bản"));
+            list.add(modelClass);
+//
+//            list.add(new ModelClass
+//                    ("question 1 : Đâu là tên của một câu truyện cười dân gian ? ","Thầy bói xem ngan","Thầy bói xem voi","Thầy bói xem vịt","Thầy bói xem heo","Thầy bói xem voi"));
+//            list.add(new ModelClass
+//                    ("question 2 : Thưa rằng tôi đi hái ... Hai anh mở túi đưa trầu cho ăn ? ","Dâu","Cau","Ổi","Táo","Dâu"));
+//            list.add(new ModelClass
+//                    ("question 3 : Đâu là tên của một loại phương tiện vận chuyển người thời trước? ","Hành","Tỏi","Kiệu","Dưa","Kiệu"));
+//            list.add(new ModelClass
+//                    ("question 4 : Loài động vật nào sau đây có gai trên cơ thể? ","Chó","Mèo","Hùng","Nhím","Nhím"));
+//            list.add(new ModelClass
+//                    ("question 5 : Haiku là thể thơ truyền thống của nước nào? ","Anh","Nhật Bản ","Pháp","Ý","Nhật Bản"));
 
         }
         return list;

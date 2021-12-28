@@ -24,6 +24,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        DataBaseHelper databaseHelper = new DataBaseHelper(this);
+        list = databaseHelper.getAllData();
 
 //        list = new ArrayList<ModelClass>();
 //
@@ -38,34 +40,34 @@ public class SplashActivity extends AppCompatActivity {
 //                ("question 4 : Loài động vật nào sau đây có gai trên cơ thể? ","Chó","Mèo","Hùng","Nhím","Nhím"));
 //        list.add(new ModelClass
 //                ("question 5 : Haiku là thể thơ truyền thống của nước nào? ","Anh","Nhật Bản ","Pháp","Ý","Nhật Bản"));
-        databaseReference = FirebaseDatabase.getInstance().getReference("Question");
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    ModelClass modelClass = snapshot.getValue(ModelClass.class);
-                    list.add(modelClass);
-                }
-                Intent intent = new Intent(SplashActivity.this, DashboardActivity.class);
-                startActivity(intent);
-            }
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        databaseReference = FirebaseDatabase.getInstance().getReference("Question");
+//
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    ModelClass modelClass = snapshot.getValue(ModelClass.class);
+//                    list.add(modelClass);
+//                }
+//                Intent intent = new Intent(SplashActivity.this, DashboardActivity.class);
+//                startActivity(intent);
+//            }
+//
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
 //
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                Intent intent = new Intent(SplashActivity.this,DashboardActivity.class);
-//                startActivity(intent);
-                //call api or some thing
+                Intent intent = new Intent(SplashActivity.this,DashboardActivity.class);
+                startActivity(intent);
+//                call api or some thing
             }
 
         }, 1500);
