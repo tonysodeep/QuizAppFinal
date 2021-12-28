@@ -25,16 +25,19 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        list = new ArrayList<ModelClass>();
-
-        // sau khi làm xg sqlite db vs số câu hỏi thì lấy lây bỏ list
-
-//        list =
-//        list.add(new ModelClass("question 1 : how do u feel ","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer2","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer3","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer4","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer5","a","b","c","d","a"));
+//        list = new ArrayList<ModelClass>();
+//
+//        // sau khi làm xg sqlite db vs số câu hỏi thì lấy lây bỏ list
+//        list.add(new ModelClass
+//                ("question 1 : Đâu là tên của một câu truyện cười dân gian ? ","Thầy bói xem ngan","Thầy bói xem voi","Thầy bói xem vịt","Thầy bói xem heo","Thầy bói xem voi"));
+//        list.add(new ModelClass
+//                ("question 2 : Thưa rằng tôi đi hái ... Hai anh mở túi đưa trầu cho ăn ? ","Dâu","Cau","Ổi","Táo","Dâu"));
+//        list.add(new ModelClass
+//                ("question 3 : Đâu là tên của một loại phương tiện vận chuyển người thời trước? ","Hành","Tỏi","Kiệu","Dưa","Kiệu"));
+//        list.add(new ModelClass
+//                ("question 4 : Loài động vật nào sau đây có gai trên cơ thể? ","Chó","Mèo","Hùng","Nhím","Nhím"));
+//        list.add(new ModelClass
+//                ("question 5 : Haiku là thể thơ truyền thống của nước nào? ","Anh","Nhật Bản ","Pháp","Ý","Nhật Bản"));
         databaseReference = FirebaseDatabase.getInstance().getReference("Question");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
