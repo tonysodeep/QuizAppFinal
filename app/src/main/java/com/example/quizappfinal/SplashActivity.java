@@ -30,38 +30,42 @@ public class SplashActivity extends AppCompatActivity {
         // sau khi làm xg sqlite db vs số câu hỏi thì lấy lây bỏ list
 
 //        list =
-//        list.add(new ModelClass("question 1 : how do u feel ","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer2","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer3","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer4","a","b","c","d","a"));
-//        list.add(new ModelClass("aswer5","a","b","c","d","a"));
-        databaseReference = FirebaseDatabase.getInstance().getReference("Question");
+        list.add(new ModelClass("question 1 : how do u feel ","a","b","c","d","a"));
+        list.add(new ModelClass("aswer2","a","b","c","d","a"));
+        list.add(new ModelClass("aswer3","a","b","c","d","a"));
+        list.add(new ModelClass("aswer4","a","b","c","d","a"));
+        list.add(new ModelClass("aswer5","a","b","c","d","a"));
+        //neu co internet
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    ModelClass modelClass = snapshot.getValue(ModelClass.class);
-                    list.add(modelClass);
-                }
-                Intent intent = new Intent(SplashActivity.this, DashboardActivity.class);
-                startActivity(intent);
-            }
+//        databaseReference = FirebaseDatabase.getInstance().getReference("Question");
+//
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    ModelClass modelClass = snapshot.getValue(ModelClass.class);
+//                    list.add(modelClass);
+//                }
+//                Intent intent = new Intent(SplashActivity.this, DashboardActivity.class);
+//                startActivity(intent);
+//            }
+//
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
+//      nếu ko có internet
+        //lay data từ sqlite lên
 
 //
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                Intent intent = new Intent(SplashActivity.this,DashboardActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(SplashActivity.this,DashboardActivity.class);
+                startActivity(intent);
                 //call api or some thing
             }
 
