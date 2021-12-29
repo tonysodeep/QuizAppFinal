@@ -23,6 +23,7 @@ public class WonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_won);
 
+        //passed them cai tong so cau hoi
         correct = getIntent().getIntExtra("correct", 0);
         wrong = getIntent().getIntExtra("wrong", 0);
 
@@ -32,7 +33,9 @@ public class WonActivity extends AppCompatActivity {
         exitText = findViewById(R.id.ic_exit);
 
         circularProgressBar.setProgress(correct);
-        textView.setText(correct+"/20");
+        //set cung /20
+        //thay /20 thay la cai list.size();
+        textView.setText(correct + "/" +"");
 
         btShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +56,7 @@ public class WonActivity extends AppCompatActivity {
         exitText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WonActivity.this,SplashActivity.class);
+                Intent intent = new Intent(WonActivity.this, SplashActivity.class);
                 startActivity(intent);
                 finish();
             }
