@@ -76,6 +76,7 @@ public class DashboardActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(DashboardActivity.this, SplashActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 Log.d("AAA", "finished");
@@ -157,6 +158,7 @@ public class DashboardActivity extends AppCompatActivity {
         intent.putExtra("wrong", wrongCount);
         //pass them total question
         startActivity(intent);
+        finish();
     }
 
     public void enableButton() {
@@ -183,6 +185,7 @@ public class DashboardActivity extends AppCompatActivity {
     public void OptionAClick(View view) {
         disableButton();
         nextBtn.setClickable(true);
+        countDownTimer.cancel();
         if (modelClass.getoA().equals(modelClass.getAns())) {
             cardOfA.setCardBackgroundColor(getResources().getColor(R.color.green));
             if (index < list.size() - 1) {
@@ -199,6 +202,7 @@ public class DashboardActivity extends AppCompatActivity {
     public void OptionBClick(View view) {
         disableButton();
         nextBtn.setClickable(true);
+        countDownTimer.cancel();
         if (modelClass.getoB().equals(modelClass.getAns())) {
             cardOfB.setCardBackgroundColor(getResources().getColor(R.color.green));
             if (index < list.size() - 1) {
@@ -216,6 +220,7 @@ public class DashboardActivity extends AppCompatActivity {
         Log.d("AAA", "click A");
         disableButton();
         nextBtn.setClickable(true);
+        countDownTimer.cancel();
         if (modelClass.getoC().equals(modelClass.getAns())) {
 
             cardOfC.setCardBackgroundColor(getResources().getColor(R.color.green));
@@ -232,6 +237,7 @@ public class DashboardActivity extends AppCompatActivity {
     public void OptionDClick(View view) {
         disableButton();
         nextBtn.setClickable(true);
+        countDownTimer.cancel();
         if (modelClass.getoD().equals(modelClass.getAns())) {
             cardOfD.setCardBackgroundColor(getResources().getColor(R.color.green));
             if (index < list.size() - 1) {

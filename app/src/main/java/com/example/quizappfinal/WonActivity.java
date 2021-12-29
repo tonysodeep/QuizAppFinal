@@ -16,6 +16,7 @@ public class WonActivity extends AppCompatActivity {
     TextView textView;
     int correct, wrong;
     LinearLayout btShare;
+    TextView exitText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class WonActivity extends AppCompatActivity {
         circularProgressBar = findViewById(R.id.circularProgressBar);
         textView = findViewById(R.id.result_text);
         btShare = findViewById(R.id.bt_share);
+        exitText = findViewById(R.id.ic_exit);
 
         circularProgressBar.setProgress(correct);
         textView.setText(correct+"/20");
@@ -48,7 +50,14 @@ public class WonActivity extends AppCompatActivity {
                 }
             }
         });
-
+        exitText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WonActivity.this,SplashActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 }
