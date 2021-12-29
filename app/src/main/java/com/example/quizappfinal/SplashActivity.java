@@ -3,6 +3,7 @@ package com.example.quizappfinal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,20 +27,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         DataBaseHelper databaseHelper = new DataBaseHelper(this);
         list = databaseHelper.getAllData();
+        loaddata();
 
 //        list = new ArrayList<ModelClass>();
-//
-//        // sau khi làm xg sqlite db vs số câu hỏi thì lấy lây bỏ list
-//        list.add(new ModelClass
-//                ("question 1 : Đâu là tên của một câu truyện cười dân gian ? ","Thầy bói xem ngan","Thầy bói xem voi","Thầy bói xem vịt","Thầy bói xem heo","Thầy bói xem voi"));
-//        list.add(new ModelClass
-//                ("question 2 : Thưa rằng tôi đi hái ... Hai anh mở túi đưa trầu cho ăn ? ","Dâu","Cau","Ổi","Táo","Dâu"));
-//        list.add(new ModelClass
-//                ("question 3 : Đâu là tên của một loại phương tiện vận chuyển người thời trước? ","Hành","Tỏi","Kiệu","Dưa","Kiệu"));
-//        list.add(new ModelClass
-//                ("question 4 : Loài động vật nào sau đây có gai trên cơ thể? ","Chó","Mèo","Hùng","Nhím","Nhím"));
-//        list.add(new ModelClass
-//                ("question 5 : Haiku là thể thơ truyền thống của nước nào? ","Anh","Nhật Bản ","Pháp","Ý","Nhật Bản"));
 //        databaseReference = FirebaseDatabase.getInstance().getReference("Question");
 //
 //        databaseReference.addValueEventListener(new ValueEventListener() {
@@ -62,14 +52,27 @@ public class SplashActivity extends AppCompatActivity {
 
 
 //
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashActivity.this,DashboardActivity.class);
-                startActivity(intent);
-//                call api or some thing
-            }
 
-        }, 1500);
+    }
+    private void loaddata(){
+        if(AppUtil.isNetworkAvailable(this)){
+            //Network Connect
+            // API
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(SplashActivity.this,DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+//                call api or some thing
+                }
+
+            }, 1500);
+        }else{
+            // Network disconnect
+            Toast.makeText(this, "Network disconnected", Toast.LENGTH_SHORT).show();
+            DataBaseHelper databaseHelper = new DataBaseHelper(this);
+            list = databaseHelper.getAllData();
+        }
     }
 }
