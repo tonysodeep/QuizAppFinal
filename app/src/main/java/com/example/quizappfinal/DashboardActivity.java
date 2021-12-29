@@ -19,7 +19,6 @@ import androidx.cardview.widget.CardView;
 
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,7 +34,6 @@ public class DashboardActivity extends AppCompatActivity {
     int correctCount = 0;
     int wrongCount = 0;
     LinearLayout nextBtn;
-    DataBaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,12 +84,7 @@ public class DashboardActivity extends AppCompatActivity {
                 dialog.show();
             }
         }.start();
-        loadData();
         setAllData();
-    }
-    private void loadData() {
-       list  = databaseHelper.getAllData();
-
     }
 
     private void setAllData() {

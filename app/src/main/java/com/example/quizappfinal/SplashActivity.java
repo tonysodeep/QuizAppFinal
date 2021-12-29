@@ -2,7 +2,9 @@ package com.example.quizappfinal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,15 +30,18 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         list = new ArrayList<ModelClass>();
         databaseHelper = new DataBaseHelper(this);
-        loadData();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadData();
+            }
+        }, 1500);
         Log.d("AAA", "list of data " + list.size());
     }
 
     private void loadData() {
         if (AppUtil.isNetworkAvailable(this)) {
-            //Network Connect
-            // API
-            Log.d("AAA", "has internet");
+            Toast.makeText(this,"Internet connected",Toast.LENGTH_SHORT).show();
             databaseReference = FirebaseDatabase.getInstance().getReference("Question");
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -54,8 +59,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
             });
         } else {
-            Log.d("AAA", "no internet");
-            // Network disconnect
+            Toast.makeText(this,"Internet not connected",Toast.LENGTH_SHORT).show();
             list = databaseHelper.getAllData();
             Intent intent = new Intent(SplashActivity.this, DashboardActivity.class);
             startActivity(intent);
