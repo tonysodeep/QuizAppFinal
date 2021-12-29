@@ -36,28 +36,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(_db);
     }
 
-//    public boolean insertData(String Question, String oA, String oB, String oC, String oD, String ans) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put("Question", Question);
-//        contentValues.put("oA", oA);
-//        contentValues.put("oB", oB);
-//        contentValues.put("oC", oC);
-//        contentValues.put("oD", oD);
-//        contentValues.put("ans", ans);
-//
-//
-//        long result = db.insert("QuizAppQuestion", null, contentValues);
-//
-//        if (result == -1) return false;
-//        else
-//            return true;
-//    }
-
     public  ArrayList<ModelClass> getAllData(){
         ArrayList<ModelClass> list = new ArrayList<ModelClass>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT *FROM QuizAppQuestion",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM QuizAppQuestion",null);
 
         while (cursor.moveToNext()){
             String Question = cursor.getString(0);
@@ -69,8 +51,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             ModelClass modelClass = new ModelClass( Question, oA, oB, oC, oD, ans);
             list.add(modelClass);
-
-
         }
         return list;
     }
