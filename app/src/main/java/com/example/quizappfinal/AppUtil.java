@@ -1,5 +1,6 @@
 package com.example.quizappfinal;
 
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -12,6 +13,7 @@ public class AppUtil {
         if(context == null){
             return  false;
         }
+
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager == null){
             return  false;
