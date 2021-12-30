@@ -10,10 +10,17 @@
         <entry key="..\:/Android App/QuizAppFinal/app/src/main/res/drawable/timeout_btn_shape.xml" value="0.10729166666666666" />
         <entry key="..\:/Android App/QuizAppFinal/app/src/main/res/layout/activity_dashboard.xml" value="0.19537037037037036" />
         <entry key="..\:/Android App/QuizAppFinal/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
-        <entry key="..\:/Android App/QuizAppFinal/app/src/main/res/layout/activity_splash.xml" value="0.17552083333333332" />
         <entry key="..\:/Android App/QuizAppFinal/app/src/main/res/layout/activity_won.xml" value="0.1" />
         <entry key="..\:/Android App/QuizAppFinal/app/src/main/res/layout/time_out_dialog.xml" value="0.165" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/drawable/empty_background.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/drawable/ic_launcher_background.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/drawable/next_btn_shape.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/layout/activity_splash.xml" value="0.28229166666666666" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/layout/activity_won.xml" value="0.25" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/layout/time_out_dialog.xml" value="0.375" />
+        <entry key="..\:/Users/thanh/AndroidStudioProjects/QuizAppFinal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.39114583333333336" />
       </map>
     </option>
   </component>
