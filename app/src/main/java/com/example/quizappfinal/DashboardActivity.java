@@ -4,6 +4,7 @@ import static com.example.quizappfinal.SplashActivity.list;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -24,6 +25,7 @@ import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
+
     int timerValue = 20;
     RoundedHorizontalProgressBar progressBar;
     List<ModelClass> allQuestionList;
@@ -34,12 +36,12 @@ public class DashboardActivity extends AppCompatActivity {
     int correctCount = 0;
     int wrongCount = 0;
     LinearLayout nextBtn;
-
+    MediaPlayer myPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+        myPlayer.start();
         hocks();
 
         allQuestionList = list;
