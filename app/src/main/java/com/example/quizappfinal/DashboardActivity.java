@@ -4,7 +4,6 @@ import static com.example.quizappfinal.SplashActivity.list;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.net.wifi.p2p.WifiP2pDevice;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -18,9 +17,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.quizappfinal.services.MyService;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,7 +41,7 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+        startService(new Intent(this, MyService.class));
         hocks();
 
         allQuestionList = list;
@@ -168,7 +167,7 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(DashboardActivity.this, WonActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);
-        intent.putExtra("total",list.size());
+        intent.putExtra("total", list.size());
         startActivity(intent);
         finish();
     }
@@ -260,5 +259,11 @@ public class DashboardActivity extends AppCompatActivity {
         } else {
             wrong(cardOfD);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this,MyService.class));
     }
 }
