@@ -88,10 +88,9 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp">
 
-        <ImageView
+        <com.example.quizappfinal.views.CustomViewWon
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/ic_launcher_foreground" />
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
 

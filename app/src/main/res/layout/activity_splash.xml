@@ -11,10 +11,9 @@
         android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical">
-        <ImageView
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_150sdp"
-            android:src="@drawable/ic_launcher_background" />
+        <com.example.quizappfinal.views.MyCustomView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
