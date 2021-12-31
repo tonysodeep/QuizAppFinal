@@ -37,9 +37,6 @@ public class DashboardActivity extends AppCompatActivity {
     int wrongCount = 0;
     LinearLayout nextBtn;
     TextView exitText;
-//    List<ModelClass> listsize;
-//    DataBaseHelper dataBaseHelper;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +55,6 @@ public class DashboardActivity extends AppCompatActivity {
         cardOfD.setBackgroundColor(getResources().getColor(R.color.white));
 
         nextBtn.setClickable(false);
-// lay list size
-//
-//       dataBaseHelper.getAllData().size();
-//
-//        listsize = new ArrayList<ModelClass>();
-//        Log.d("AAA", "list of data " + listsize.size());
 
         countDownTimer = new CountDownTimer(20000, 1000) {
             @Override
@@ -178,7 +169,6 @@ public class DashboardActivity extends AppCompatActivity {
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);
         intent.putExtra("total",list.size());
-        //pass them total question
         startActivity(intent);
         finish();
     }

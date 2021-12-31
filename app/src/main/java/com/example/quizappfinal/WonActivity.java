@@ -23,7 +23,6 @@ public class WonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_won);
 
-        //passed them cai tong so cau hoi
         correct = getIntent().getIntExtra("correct", 0);
         wrong = getIntent().getIntExtra("wrong", 0);
         total = getIntent().getIntExtra("total", 0);
@@ -34,8 +33,6 @@ public class WonActivity extends AppCompatActivity {
         exitText = findViewById(R.id.ic_exit);
 
         circularProgressBar.setProgress(correct);
-        //set cung /20
-        //thay /20 thay la cai list.size();
         textView.setText(correct + " / " + total);
 
         btShare.setOnClickListener(new View.OnClickListener() {
