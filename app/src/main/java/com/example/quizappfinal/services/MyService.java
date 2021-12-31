@@ -1,4 +1,4 @@
-package com.example.quizappfinal;
+package com.example.quizappfinal.services;
 
 import android.app.Service;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.os.IBinder;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+
+import com.example.quizappfinal.R;
 
 public class MyService extends Service {
     MediaPlayer myPlayer;

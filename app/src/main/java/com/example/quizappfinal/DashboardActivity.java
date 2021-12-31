@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.quizappfinal.services.MyService;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 
 import java.util.Collections;
@@ -40,7 +41,7 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        startService(new Intent(this,MyService.class));
+        startService(new Intent(this, MyService.class));
         hocks();
 
         allQuestionList = list;
