@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.BuildConfig;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 public class WonActivity extends AppCompatActivity {
