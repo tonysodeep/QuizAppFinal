@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.quizappfinal.models.ModelClass;
 import com.example.quizappfinal.services.MyService;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizappfinal.helpers.DataBaseHelper;
+import com.example.quizappfinal.models.ModelClass;
 import com.example.quizappfinal.utils.AppUtil;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
