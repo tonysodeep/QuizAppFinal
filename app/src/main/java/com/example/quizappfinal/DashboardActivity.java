@@ -177,6 +177,7 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(DashboardActivity.this, WonActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);
+        intent.putExtra("total",list.size());
         //pass them total question
         startActivity(intent);
         finish();
