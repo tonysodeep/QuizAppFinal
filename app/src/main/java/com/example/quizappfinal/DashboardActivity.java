@@ -4,6 +4,7 @@ import static com.example.quizappfinal.SplashActivity.list;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.wifi.p2p.WifiP2pDevice;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -19,6 +20,7 @@ import androidx.cardview.widget.CardView;
 
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,6 +36,7 @@ public class DashboardActivity extends AppCompatActivity {
     int correctCount = 0;
     int wrongCount = 0;
     LinearLayout nextBtn;
+    TextView exitText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,15 @@ public class DashboardActivity extends AppCompatActivity {
             }
         }.start();
         setAllData();
+        exitText = findViewById(R.id.ic_exit);
+        exitText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, SplashActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void setAllData() {
@@ -156,7 +168,7 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(DashboardActivity.this, WonActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);
-        //pass them total question
+        intent.putExtra("total",list.size());
         startActivity(intent);
         finish();
     }
